@@ -1,12 +1,12 @@
-require('dotenv').config();          
+require('dotenv').config();
 const express = require('express');
-const cors    = require('cors');
+const cors = require('cors');
 
-const authRouter    = require('./routes/auth');
-const itemsRouter   = require('./routes/items');
+const authRouter = require('./routes/auth');  // Correct CommonJS import
+const itemsRouter = require('./routes/items');
 const reviewsRouter = require('./routes/reviews');
-const commentsRouter= require('./routes/comments');
-const userRouter    = require('./routes/user');
+const commentsRouter = require('./routes/comments');
+const userRouter = require('./routes/user');
 
 const app = express();
 
@@ -17,11 +17,11 @@ app.get('/', (_req, res) => {
   res.send('🎉 Capstone API is live!');
 });
 
-app.use('/api/auth',    authRouter);
-app.use('/api/items',   itemsRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/items', itemsRouter);
 app.use('/api/reviews', reviewsRouter);
-app.use('/api/comments',commentsRouter);
-app.use('/api/user',    userRouter); 
+app.use('/api/comments', commentsRouter);
+app.use('/api/user', userRouter); 
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -32,3 +32,4 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
