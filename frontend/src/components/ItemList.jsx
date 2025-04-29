@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api';
+
 const ItemList = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -8,7 +10,7 @@ const ItemList = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items`);
+        const response = await fetch(`${BASE_URL}/items`);
         const data = await response.json();
         setItems(data);
       } catch (error) {
@@ -49,3 +51,4 @@ const ItemList = () => {
 };
 
 export default ItemList;
+
