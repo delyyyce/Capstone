@@ -10,7 +10,7 @@ const ItemList = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch(`${BASE_URL}/items`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/items`);
         const data = await response.json();
         setItems(data);
       } catch (error) {
@@ -51,4 +51,3 @@ const ItemList = () => {
 };
 
 export default ItemList;
-
