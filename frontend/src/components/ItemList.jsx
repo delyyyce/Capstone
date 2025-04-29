@@ -8,7 +8,7 @@ const ItemList = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/items');
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items`);
         const data = await response.json();
         setItems(data);
       } catch (error) {
