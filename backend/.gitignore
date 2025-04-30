@@ -3,6 +3,7 @@
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
-# Node modules
-node_modules/
+# Node modules (for backend only)
+backend/node_modules/
+
 
