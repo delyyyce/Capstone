@@ -46,7 +46,7 @@ app.use((err, req, res, next) => {
 });
 
 // In production, Elastic Beanstalk sets PORT to 8080
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
